@@ -1,0 +1,133 @@
+---
+import type { Post } from '../lib/types';
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+const latestPost = posts[0];
+---
+
+<section class="section-light py-20 lg:py-28" id="resources-section">
+  <div class="container-shell">
+    <div class="text-center animate-on-scroll">
+      <span class="eyebrow">Resources & Knowledge</span>
+      <h2 class="mt-6 text-3xl font-bold text-brand sm:text-4xl lg:text-5xl">Explore Our Ecosystem</h2>
+      <p class="mt-4 text-lg text-ink/60 max-w-2xl mx-auto">Access technical documentation, peer-reviewed publications, and community updates from MEDS.</p>
+    </div>
+
+    <div class="mt-14 grid gap-8 md:grid-cols-3">
+      <!-- Card 1: Technical Blog Posts -->
+      <div class="animate-on-scroll delay-1">
+        <div class="group rounded-2xl border border-brand/10 bg-white p-5 transition-all duration-300 hover:border-brand/30 hover:shadow-[0_20px_50px_rgba(89,46,92,0.12)] hover:-translate-y-1.5 h-full flex flex-col justify-between">
+          <div>
+            <!-- Banner Image -->
+            <div class="relative aspect-[16/9] overflow-hidden rounded-xl bg-peach mb-4 border border-brand/5">
+              <img 
+                src={latestPost?.mainImageUrl || '/meds-ee-uet/images/posts/verilator-beginners-guide.jpg'} 
+                alt="Technical Blog" 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                loading="lazy" 
+              />
+              <span class="absolute top-2.5 right-2.5 rounded-full bg-brand-dark/85 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-bold text-peach uppercase tracking-wider">
+                Technical Blog
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-brand group-hover:text-brand-light transition-colors leading-snug">
+              {latestPost?.title || 'Latest Tech Notes'}
+            </h3>
+            <p class="mt-2 text-sm text-ink/65 leading-relaxed line-clamp-2">
+              {latestPost?.bodyText?.slice(0, 110) || 'Hands-on tutorials on SystemVerilog, RISC-V simulation, RISCOF, and physical design.'}...
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3.5 border-t border-brand/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand/70">Read guides & notes</span>
+            <a href="/meds-ee-uet/blog" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-light group/link">
+              Explore Blog
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Academic Publications -->
+      <div class="animate-on-scroll delay-2">
+        <div class="group rounded-2xl border border-brand/10 bg-white p-5 transition-all duration-300 hover:border-brand/30 hover:shadow-[0_20px_50px_rgba(89,46,92,0.12)] hover:-translate-y-1.5 h-full flex flex-col justify-between">
+          <div>
+            <!-- Banner Image -->
+            <div class="relative aspect-[16/9] overflow-hidden rounded-xl bg-peach mb-4 border border-brand/5">
+              <img 
+                src="/meds-ee-uet/images/posts/tapeout-readiness-spring-riscv-core.jpg" 
+                alt="Publications" 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                loading="lazy" 
+              />
+              <span class="absolute top-2.5 right-2.5 rounded-full bg-brand-dark/85 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-bold text-peach uppercase tracking-wider">
+                Research Papers
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-brand group-hover:text-brand-light transition-colors leading-snug">
+              Publications & Journals
+            </h3>
+            <p class="mt-2 text-sm text-ink/65 leading-relaxed line-clamp-2">
+              Explore peer-reviewed journal articles and conference papers featured in IEEE Access, arXiv, WOVEN (ISCA), and IEEE Electron Magazine.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3.5 border-t border-brand/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand/70">10+ Published Papers</span>
+            <a href="/meds-ee-uet/publications" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-light group/link">
+              View Papers
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Live LinkedIn Activities -->
+      <div class="animate-on-scroll delay-3">
+        <div class="group rounded-2xl border border-brand/10 bg-white p-5 transition-all duration-300 hover:border-brand/30 hover:shadow-[0_20px_50px_rgba(89,46,92,0.12)] hover:-translate-y-1.5 h-full flex flex-col justify-between">
+          <div>
+            <!-- Banner Image -->
+            <div class="relative aspect-[16/9] overflow-hidden rounded-xl bg-blue-50 mb-4 border border-brand/5">
+              <img 
+                src="/meds-ee-uet/images/activities/risc-v-bring-up-workshop-0.jpg" 
+                alt="Lab Activities" 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                loading="lazy" 
+              />
+              <span class="absolute top-2.5 right-2.5 rounded-full bg-[#0A66C2] backdrop-blur-md px-2.5 py-0.5 text-[10px] font-bold text-white uppercase tracking-wider">
+                Live Feed
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-brand group-hover:text-brand-light transition-colors leading-snug">
+              Lab Activities & Social
+            </h3>
+            <p class="mt-2 text-sm text-ink/65 leading-relaxed line-clamp-2">
+              Stay tuned with real-time workshops, research updates, chip fabrications, and member spot-lights on our official LinkedIn hub.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3.5 border-t border-brand/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-brand/70">Official Updates</span>
+            <a href="/meds-ee-uet/activities" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0A66C2] hover:text-blue-700 group/link">
+              View Feed
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import HighlightsCarousel from '../components/HighlightsCarousel.astro';
+import StatsBanner from '../components/StatsBanner.astro';
+import ResearchDomains from '../components/ResearchDomains.astro';
+import ParallaxFeature from '../components/ParallaxFeature.astro';
+import ResourcesGrid from '../components/ResourcesGrid.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { getHomeSummaries } from '../lib/content';
+
+const { latestPosts, featuredProjects, latestActivities } = await getHomeSummaries();
+---
+
+<BaseLayout title="MEDS — Maktab-e-Digital Systems" description="University center for chip design, hardware tape-outs, and FPGA accelerators at UET, Lahore.">
+  <HeroSection />
+  <ResearchDomains />
+  <StatsBanner />
+  <HighlightsCarousel posts={latestPosts} />
+  <!-- <ParallaxFeature /> -->
+  <!-- <ResourcesGrid posts={latestPosts} /> -->
+  <CTABanner />
+</BaseLayout>

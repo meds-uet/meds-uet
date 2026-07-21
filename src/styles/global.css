@@ -1,0 +1,271 @@
+/* 1. Import Google Fonts normally */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* 2. Replace the 3 @tailwind lines with this one import */
+@import "tailwindcss";
+
+/* 3. Your custom theme configuration (Tailwind v4 CSS-first style) */
+@theme {
+  --color-brand: #592E5C;
+  --color-brand-dark: #3D1F40;
+  --color-brand-deep: #2E1630;
+  --color-brand-light: #7A4D7D;
+  --color-ink: #1F2937;
+  --color-mauve: #EADCEA;
+  --color-peach: #FFE6E6;
+  --font-display: "Space Grotesk", sans-serif;
+  --shadow-soft: 0 18px 45px rgba(89, 46, 92, 0.12);
+}
+
+/* 4. Your layer styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+    font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .surface {
+    @apply rounded-3xl border border-mauve/80 bg-white shadow-soft;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-mauve bg-peach px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand;
+  }
+
+  /* ── Dark sections use brand purple ── */
+  .section-dark {
+    @apply bg-brand text-white;
+  }
+
+  .section-light {
+    @apply bg-white text-ink;
+  }
+
+  /* ── Page hero (dark header for inner pages) ── */
+  .page-hero {
+    @apply bg-brand text-white pt-32 pb-28 lg:pt-40 lg:pb-36 relative overflow-hidden;
+  }
+
+  .page-hero .eyebrow {
+    @apply border-white/20 bg-white/10 text-peach;
+  }
+
+  .page-hero h1 {
+    @apply text-white;
+  }
+
+  .page-hero p {
+    @apply text-white/75;
+  }
+
+  /* ── Scroll-triggered animations ── */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-on-scroll.delay-1 {
+    transition-delay: 0.1s;
+  }
+
+  .animate-on-scroll.delay-2 {
+    transition-delay: 0.2s;
+  }
+
+  .animate-on-scroll.delay-3 {
+    transition-delay: 0.3s;
+  }
+
+  .animate-on-scroll.delay-4 {
+    transition-delay: 0.4s;
+  }
+
+  /* ── Parallax background ── */
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media (max-width: 768px) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
+}
+
+/* ── Keyframes ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatChip {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.float-animation {
+  animation: floatChip 5s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* ── Custom Prose for Blog/Markdoc Content ── */
+.prose-custom {
+  @apply text-ink/85 leading-relaxed text-[16px] sm:text-[17px] break-words overflow-hidden;
+}
+
+.prose-custom h2 {
+  @apply text-2xl font-bold mt-10 mb-4 text-brand-dark font-display border-b border-mauve pb-2 tracking-tight;
+}
+
+.prose-custom h3 {
+  @apply text-xl font-bold mt-8 mb-3 text-brand tracking-tight;
+}
+
+.prose-custom h4 {
+  @apply text-lg font-semibold mt-6 mb-2 text-ink;
+}
+
+.prose-custom p {
+  @apply my-5 leading-relaxed text-ink/80 break-words;
+}
+
+.prose-custom a {
+  @apply text-brand font-semibold underline decoration-brand/30 hover:decoration-brand transition-all break-words;
+}
+
+.prose-custom ul {
+  @apply list-disc my-5 pl-6 space-y-2;
+}
+
+.prose-custom ol {
+  @apply list-decimal my-5 pl-6 space-y-2;
+}
+
+.prose-custom li {
+  @apply text-ink/80 break-words;
+}
+
+.prose-custom blockquote {
+  @apply border-l-4 border-brand bg-mauve/20 px-6 py-4 my-6 rounded-r-xl italic text-ink/75;
+}
+
+.prose-custom blockquote p {
+  @apply m-0;
+}
+
+.prose-custom pre {
+  @apply overflow-x-auto max-w-full rounded-2xl bg-brand-deep text-white/90 p-4 sm:p-5 my-6 text-xs sm:text-sm font-mono leading-relaxed shadow-inner border border-brand-dark/50;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose-custom pre code {
+  @apply bg-transparent text-inherit p-0 font-normal border-0 text-inherit;
+  white-space: pre;
+  word-break: normal;
+}
+
+.prose-custom code:not(pre code) {
+  @apply bg-mauve/40 text-brand px-1.5 py-0.5 rounded text-xs sm:text-sm font-mono font-medium break-words;
+}
+
+.prose-custom img {
+  @apply rounded-2xl border border-mauve/80 my-8 mx-auto shadow-sm max-w-full h-auto object-cover;
+}
+
+.prose-custom hr {
+  @apply border-mauve/60 my-10;
+}
+
+.prose-custom table {
+  @apply w-full border-collapse my-8 text-sm overflow-x-auto block max-w-full rounded-xl border border-mauve/50;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose-custom th {
+  @apply bg-brand/5 text-brand font-semibold px-4 py-3 text-left border-b border-mauve;
+}
+
+.prose-custom td {
+  @apply px-4 py-3 border-b border-mauve/40 text-ink/80;
+}
+
+.prose-custom tr:last-child td {
+  @apply border-b-0;
+}
