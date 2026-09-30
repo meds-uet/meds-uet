@@ -21,3 +21,5 @@ Thumbs.db
 
 # Keystatic
 keystatic.db
+
+*.webm
