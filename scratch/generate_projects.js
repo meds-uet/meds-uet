@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const projectDir = '/home/talha/Dev/meds-ee-uet/src/content/projects';
+const projectDir = '/home/talha/Dev/meds-uet/src/content/projects';
 
 // Remove old files
 const files = fs.readdirSync(projectDir);

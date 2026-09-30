@@ -58,14 +58,14 @@ what they do:
 sudo apt-get install python3
 ```
 
-![RISCOF_i_1](/meds-ee-uet/images/posts/RISCOF_i_1.png)
+![RISCOF_i_1](/meds-uet/images/posts/RISCOF_i_1.png)
 
   2. **Install pip3:**
 ```bash
 sudo apt-install python3-pip
 ```
 
-![RISCOF_i_2](/meds-ee-uet/images/posts/RISCOF_i_2.png)
+![RISCOF_i_2](/meds-uet/images/posts/RISCOF_i_2.png)
 
   3. **Upgrade pip:**
 ```bash
@@ -75,7 +75,7 @@ pip3 install --upgrade pip
 This updates **pip** , the package manager for Python, so it can handle the
 latest packages and dependencies.
 
-![RISCOF_i_3](/meds-ee-uet/images/posts/RISCOF_i_3.png)
+![RISCOF_i_3](/meds-uet/images/posts/RISCOF_i_3.png)
 
   4. **Install RISCOF:**
 ```bash
@@ -85,7 +85,7 @@ pip3 install -U riscof
 This command installs or updates **RISCOF** , the framework used for RISC-V
 compliance testing.
 
-![RISCOF_i_4](/meds-ee-uet/images/posts/RISCOF_i_4.png)
+![RISCOF_i_4](/meds-uet/images/posts/RISCOF_i_4.png)
 
 ### Handling Common Installation Error
 
@@ -119,7 +119,7 @@ riscof  --help
 
 to print the help routine, it will show the output like this.
 
-![RISCOF_i_5](/meds-ee-uet/images/posts/RISCOF_i_5.png)
+![RISCOF_i_5](/meds-uet/images/posts/RISCOF_i_5.png)
 
 ## Install RISCV-GNU Toolchain
 
@@ -150,7 +150,7 @@ This command installs essential tools and libraries:
 * **z3** : A theorem prover used by Sail for formal verification.
 * **pkg-config** and **zlib1g-dev** : Libraries for handling dependencies.
 ```
-![RISCOF_i_6](/meds-ee-uet/images/posts/RISCOF_i_6.png)
+![RISCOF_i_6](/meds-uet/images/posts/RISCOF_i_6.png)
 
   * **Initialize OPAM:**
 ```bash
@@ -161,7 +161,7 @@ This initializes OPAM, the OCaml package manager, to install OCaml packages.
 The _\--disable-sandboxing_ option avoids permission issues during
 installation.
 
-![RISCOF_i_7](/meds-ee-uet/images/posts/RISCOF_i_7.png)
+![RISCOF_i_7](/meds-uet/images/posts/RISCOF_i_7.png)
 
   * **Install Sail:**
 ```bash
@@ -171,7 +171,7 @@ opam install sail -y
 This installs the **Sail** package from OPAM, which provides the Sail RISC-V
 specification.
 
-![RISCOF_i_8](/meds-ee-uet/images/posts/RISCOF_i_8.png)
+![RISCOF_i_8](/meds-uet/images/posts/RISCOF_i_8.png)
 
   * **Set the environment:**
 ```bash
@@ -190,7 +190,7 @@ git clone https://github.com/riscv/sail-riscv.git
 This clones the official Sail RISC-V repository from GitHub, which contains
 the RISC-V models and emulators.
 
-![RISCOF_i_9](/meds-ee-uet/images/posts/RISCOF_i_9.png)
+![RISCOF_i_9](/meds-uet/images/posts/RISCOF_i_9.png)
 
   * **Build the RISC-V models for 32-bit and 64-bit architectures:**
 ```makefile
@@ -290,7 +290,7 @@ spike
 
 Write spike on the terminal to check whether it shows the same output.
 
-![RISCOF_i_10](/meds-ee-uet/images/posts/RISCOF_i_10.png)
+![RISCOF_i_10](/meds-uet/images/posts/RISCOF_i_10.png)
 
 ### Installation of Verilator
 

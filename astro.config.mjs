@@ -8,7 +8,7 @@ export default defineConfig({
   output: "static",
 
   site: "https://talhaticx.github.io",
-  base: "/meds-ee-uet",
+  base: "/meds-uet",
 
   integrations: [
     react(),

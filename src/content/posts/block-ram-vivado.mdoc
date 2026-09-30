@@ -33,13 +33,13 @@ The BMG core supports both Native and AXI4 interfaces.
 
   * Create a new project in vivado and click on IP Catalog option in Project Manager menu
 
-![block-ram_i_1](/meds-ee-uet/images/posts/block-ram_i_1.png)
+![block-ram_i_1](/meds-uet/images/posts/block-ram_i_1.png)
 
 ###
 
   * In IP Catalog type Block Memory in search bar and select Block Memory Generator from the menu
 
-![block-ram_i_2](/meds-ee-uet/images/posts/block-ram_i_2.png)
+![block-ram_i_2](/meds-uet/images/posts/block-ram_i_2.png)
 
 ###
 
@@ -52,7 +52,7 @@ The BMG core supports both Native and AXI4 interfaces.
 * Select True Dual Port Ram from Memory Type menu
 * Select check box for the common clock option to drive both clock inputs with same clock buffer
 ```
-![block-ram_i_3](/meds-ee-uet/images/posts/block-ram_i_3.png)
+![block-ram_i_3](/meds-uet/images/posts/block-ram_i_3.png)
 
 ### In Port A Options Tab
 
@@ -87,7 +87,7 @@ The BMG core supports both Native and AXI4 interfaces.
   1. CE (Clock Enable): When CE is the selected priority, then CE (regcea) has a priority over reset (rsta)
   2. SR (Set Reset): When SR is the selected reset priority, then reset has a priority over CE. We are selecting SR option.
 ```
-![block-ram_i_4](/meds-ee-uet/images/posts/block-ram_i_4.png)
+![block-ram_i_4](/meds-uet/images/posts/block-ram_i_4.png)
 
 ### In Port B Options Tab
 
@@ -117,7 +117,7 @@ The BMG core supports both Native and AXI4 interfaces.
   1. CE (Clock Enable): When CE is the selected priority, then CE (regceb) has a priority over reset (rstb)
   2. SR (Set Reset): When SR is the selected reset priority, then reset has a priority over CE. We are selecting SR option.
 ```
-![block-ram_i_5](/meds-ee-uet/images/posts/block-ram_i_5.png)
+![block-ram_i_5](/meds-uet/images/posts/block-ram_i_5.png)
 
 ### In Other Options Tab
 
@@ -130,24 +130,24 @@ The BMG core supports both Native and AXI4 interfaces.
   1. memory_initialization_radix: Set 2 to get Binary, 10 to get Decimal and 16 to get Hexa
   2. memory_initialization_vector: write your memory values within your specified width
 ```
-![block-ram_i_6](/meds-ee-uet/images/posts/block-ram_i_6.png)
+![block-ram_i_6](/meds-uet/images/posts/block-ram_i_6.png)
 
 ```bash
 * Select check box to fill remaining memory locations with your desired value (0 in this case)
 ```
-![block-ram_i_7](/meds-ee-uet/images/posts/block-ram_i_7.png)
+![block-ram_i_7](/meds-uet/images/posts/block-ram_i_7.png)
 
 ### In IP Symbol Tab
 
 ```systemverilog
 * Here your Block Ram block diagram is shown where you can see the input ports and their bit size
 ```
-![block-ram_i_8](/meds-ee-uet/images/posts/block-ram_i_8.png)
+![block-ram_i_8](/meds-uet/images/posts/block-ram_i_8.png)
 
 ```bash
 * Clicking Ok appears this dialogue box. Click on generate to generate your Block Ram IP
 ```
-![block-ram_i_9](/meds-ee-uet/images/posts/block-ram_i_9.png)
+![block-ram_i_9](/meds-uet/images/posts/block-ram_i_9.png)
 
 ## Using block ram IP
 
@@ -301,7 +301,7 @@ endmodule
 
 ## The resultant simulation will be like this
 
-![block-ram_i_10](/meds-ee-uet/images/posts/block-ram_i_10.png)
+![block-ram_i_10](/meds-uet/images/posts/block-ram_i_10.png)
 
 #### Port A
 

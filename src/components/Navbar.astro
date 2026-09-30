@@ -1,19 +1,19 @@
 ---
 const links = [
-  { href: '/meds-ee-uet/', label: 'Home' },
-  { href: '/meds-ee-uet/about', label: 'About' },
-  { href: '/meds-ee-uet/blog', label: 'Blog' },
-  { href: '/meds-ee-uet/projects', label: 'Projects' },
-  { href: '/meds-ee-uet/publications', label: 'Publications' },
-  { href: '/meds-ee-uet/activities', label: 'Activities' },
+  { href: '/meds-uet/', label: 'Home' },
+  { href: '/meds-uet/about', label: 'About' },
+  { href: '/meds-uet/blog', label: 'Blog' },
+  { href: '/meds-uet/projects', label: 'Projects' },
+  { href: '/meds-uet/publications', label: 'Publications' },
+  { href: '/meds-uet/activities', label: 'Activities' },
 ];
 const currentPath = Astro.url.pathname;
 ---
 
 <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
   <div class="container-shell flex h-20 items-center justify-between gap-6">
-    <a href="/meds-ee-uet/" class="flex items-center gap-3">
-      <img src="/meds-ee-uet/images/meds_uet_logo.jpeg" alt="MEDS Logo" class="h-11 w-11 rounded-2xl object-cover shadow-soft" />
+    <a href="/meds-uet/" class="flex items-center gap-3">
+      <img src="/meds-uet/images/meds_uet_logo.jpeg" alt="MEDS Logo" class="h-11 w-11 rounded-2xl object-cover shadow-soft" />
       <div>
         <p class="font-display text-sm font-bold tracking-[0.18em] text-white uppercase">MEDS</p>
         <p class="text-xs text-white/65">Maktab-e-Digital Systems</p>
@@ -22,9 +22,9 @@ const currentPath = Astro.url.pathname;
 
     <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
       {links.map((link) => {
-        const isHomeLink = link.href === '/meds-ee-uet/';
+        const isHomeLink = link.href === '/meds-uet/';
         const isActive = isHomeLink
-          ? (currentPath === '/meds-ee-uet/' || currentPath === '/meds-ee-uet')
+          ? (currentPath === '/meds-uet/' || currentPath === '/meds-uet')
           : currentPath.startsWith(link.href);
         return (
           <a href={link.href} class={`rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? 'bg-white/20 text-white' : 'text-white/75 hover:bg-white/10 hover:text-white'}`}>
@@ -46,9 +46,9 @@ const currentPath = Astro.url.pathname;
   <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark/95 backdrop-blur-xl border-t border-white/10">
     <nav class="container-shell py-4 flex flex-col gap-1">
       {links.map((link) => {
-        const isHomeLink = link.href === '/meds-ee-uet/';
+        const isHomeLink = link.href === '/meds-uet/';
         const isActive = isHomeLink
-          ? (currentPath === '/meds-ee-uet/' || currentPath === '/meds-ee-uet')
+          ? (currentPath === '/meds-uet/' || currentPath === '/meds-uet')
           : currentPath.startsWith(link.href);
         return (
           <a href={link.href} class={`rounded-xl px-4 py-3 text-sm font-medium transition ${isActive ? 'bg-white/15 text-white' : 'text-white/75 hover:bg-white/10 hover:text-white'}`}>

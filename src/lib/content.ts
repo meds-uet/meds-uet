@@ -12,7 +12,7 @@ async function mapMember(entry: any): Promise<Member> {
     institution: entry.data.institution || undefined,
     graduationYear: entry.data.graduationYear || undefined,
     degree: entry.data.degree || undefined,
-    imageUrl: entry.data.image ? `/meds-ee-uet/images/members/${entry.data.image}` : undefined,
+    imageUrl: entry.data.image ? `/meds-uet/images/members/${entry.data.image}` : undefined,
     imageAlt: entry.data.imageAlt || entry.data.name,
     sortOrder: entry.data.sortOrder ?? 999,
   };
@@ -50,7 +50,7 @@ export async function getPosts(): Promise<Post[]> {
       entry: post,
       author,
       rawAuthor: post.data.author || undefined,
-      mainImageUrl: post.data.mainImage ? `/meds-ee-uet/images/posts/${post.data.mainImage}` : undefined,
+      mainImageUrl: post.data.mainImage ? `/meds-uet/images/posts/${post.data.mainImage}` : undefined,
       mainImageAlt: post.data.mainImageAlt || post.data.title,
     };
   }));
@@ -72,7 +72,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     entry: post,
     author,
     rawAuthor: post.data.author || undefined,
-    mainImageUrl: post.data.mainImage ? `/meds-ee-uet/images/posts/${post.data.mainImage}` : undefined,
+    mainImageUrl: post.data.mainImage ? `/meds-uet/images/posts/${post.data.mainImage}` : undefined,
     mainImageAlt: post.data.mainImageAlt || post.data.title,
   };
 }
@@ -90,7 +90,7 @@ export async function getProjects(): Promise<Project[]> {
     techStack: project.data.techStack || [],
     bodyText: project.data.abstract || '',
     entry: project,
-    heroImageUrl: project.data.heroImage ? `/meds-ee-uet/images/projects/${project.data.heroImage}` : undefined,
+    heroImageUrl: project.data.heroImage ? `/meds-uet/images/projects/${project.data.heroImage}` : undefined,
     heroImageAlt: project.data.heroImageAlt || project.data.title,
     sortOrder: project.data.sortOrder ?? 999,
   }));
@@ -113,7 +113,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     techStack: project.data.techStack || [],
     bodyText: project.data.abstract || '',
     entry: project,
-    heroImageUrl: project.data.heroImage ? `/meds-ee-uet/images/projects/${project.data.heroImage}` : undefined,
+    heroImageUrl: project.data.heroImage ? `/meds-uet/images/projects/${project.data.heroImage}` : undefined,
     heroImageAlt: project.data.heroImageAlt || project.data.title,
     sortOrder: project.data.sortOrder ?? 999,
   };
@@ -148,7 +148,7 @@ export async function getActivities(): Promise<Activity[]> {
     location: act.data.location || '',
     description: act.data.description || '',
     imageGallery: act.data.imageGallery.map((img: any) => ({
-      url: img.image ? `/meds-ee-uet/images/activities/${img.image}` : '',
+      url: img.image ? `/meds-uet/images/activities/${img.image}` : '',
       alt: img.alt || act.data.title,
     })),
   }));
