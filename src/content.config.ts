@@ -61,7 +61,7 @@ const publications = defineCollection({
 });
 
 const activities = defineCollection({
-  loader: glob({ pattern: '**/*.{yml,yaml}', base: './src/content/activities' }),
+  loader: glob({ pattern: '*.{yml,yaml}', base: './src/content/activities' }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
@@ -74,4 +74,22 @@ const activities = defineCollection({
   }),
 });
 
-export const collections = { posts, projects, members, publications, activities };
+const linkedin = defineCollection({
+  loader: glob({ pattern: '**/*.{yml,yaml}', base: './src/content/activities/linkedin' }),
+  schema: z.object({
+    id: z.string().nullable().optional(),
+    author: z.string().nullable().optional(),
+    tagline: z.string().nullable().optional(),
+    date: z.coerce.date(),
+    category: z.string().nullable().optional(),
+    badgeColor: z.string().nullable().optional(),
+    content: z.string().nullable().optional(),
+    hashtags: z.array(z.string()).default([]),
+    stats: z.object({ likes: z.number().nullable().optional(), comments: z.number().nullable().optional(), reposts: z.number().nullable().optional() }).nullable().optional(),
+    link: z.string().nullable().optional(),
+    fetched_at: z.coerce.date().nullable().optional(),
+    mainImage: z.string().nullable().optional(),
+  }),
+});
+
+export const collections = { posts, projects, members, publications, activities, linkedin };

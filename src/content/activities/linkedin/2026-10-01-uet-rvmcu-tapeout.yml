@@ -1,0 +1,23 @@
+id: uet-rvmcu-tapeout
+author: Maktab-e-Digital Systems (MEDS)
+tagline: Digital Design & Verification Research Center · UET Lahore
+date: 2026-10-01
+category: Silicon Tape-Out
+badgeColor: bg-emerald-500/10 text-emerald-700 border-emerald-500/20
+content: >-
+  Excited to share the physical design and ASIC flow of UET-RVMCU, our streamlined
+  open-source RISC-V microcontroller! Developed at MEDS UET Lahore to democratize
+  open hardware design in Pakistan.
+hashtags:
+  - '#RISCV'
+  - '#OpenSourceHardware'
+  - '#PhysicalDesign'
+  - '#ASIC'
+  - '#UETLahore'
+  - '#DigitalDesign'
+stats:
+  likes: 184
+  comments: 24
+  reposts: 19
+link: https://www.linkedin.com/company/meds-uet/
+fetched_at: 2026-10-01T00:00:00.000Z

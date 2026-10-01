@@ -156,6 +156,28 @@ export async function getActivities(): Promise<Activity[]> {
   return mapped.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
+export async function getLinkedinPosts() {
+  // load from the 'linkedin' collection we added
+  try {
+    const posts = await getCollection('linkedin');
+    const mapped = posts.map(p => ({
+      author: p.data.author || 'Maktab-e-Digital Systems (MEDS)',
+      tagline: p.data.tagline || 'Digital Design & Verification Research Center · UET Lahore',
+      date: p.data.date,
+      category: p.data.category || 'LinkedIn',
+      badgeColor: p.data.badgeColor || 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
+      content: p.data.content || '',
+      hashtags: p.data.hashtags || [],
+      stats: p.data.stats || { likes: 0, comments: 0, reposts: 0 },
+      link: p.data.link || '#',
+    }));
+
+    return mapped.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  } catch (e) {
+    return [];
+  }
+}
+
 export async function getHomeSummaries() {
   const [posts, projects, activities] = await Promise.all([getPosts(), getProjects(), getActivities()]);
 

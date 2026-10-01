@@ -1,0 +1,23 @@
+id: verilator-workshop
+author: Maktab-e-Digital Systems (MEDS)
+tagline: Digital Design & Verification Research Center · UET Lahore
+date: 2026-09-01
+category: Hands-on Training
+badgeColor: bg-brand/10 text-brand border-brand/20
+content: >-
+  Successfully conducted our hands-on Verilator and RISC-V SoC bring-up training
+  session! Undergraduates and junior researchers gained practical experience in
+  Verilog simulation, Makefile automation, and testbench design.
+hashtags:
+  - '#Verilator'
+  - '#DigitalDesign'
+  - '#Verification'
+  - '#FPGA'
+  - '#HardwareEngineering'
+  - '#Education'
+stats:
+  likes: 142
+  comments: 18
+  reposts: 12
+link: https://www.linkedin.com/company/meds-uet/
+fetched_at: 2026-09-01T00:00:00.000Z

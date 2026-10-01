@@ -18,7 +18,12 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sync:linkedin": "node scratch/scrape_linkedin.js"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.3.2",
+    "playwright": "^1.63.0"
   },
   "overrides": {
     "react": "^19.0.0",
