@@ -1,0 +1,106 @@
+---
+// MEDS-S1 flagship section. Transparent: it sits on the same backdrop as the hero.
+// The right side is a simple floorplan of the program's focus areas.
+---
+
+<section id="flagship" class="relative pb-24 pt-4 sm:pb-28 lg:pb-32">
+  <div class="container-shell">
+    <div
+      class="grid gap-12 border-t border-white/10 pt-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16 lg:pt-20"
+    >
+      <!-- Copy -->
+      <div>
+        <p class="text-sm font-medium text-peach">Current flagship program</p>
+        <h2
+          class="mt-3 text-5xl font-black tracking-tight text-white lg:text-6xl"
+        >
+          MEDS-S1
+        </h2>
+        <p class="mt-5 max-w-lg text-lg leading-8 text-white/75">
+          A full RISC-V SoC development program spanning core architecture,
+          verification, peripherals, memory, debug, software bring-up, and CI
+          integration.
+        </p>
+
+        <dl class="mt-8 flex gap-10">
+          <div class="flex flex-col-reverse">
+            <dt class="mt-1 text-sm text-white/55">Modules</dt>
+            <dd class="text-3xl font-black text-peach">16+</dd>
+          </div>
+          <div class="flex flex-col-reverse">
+            <dt class="mt-1 text-sm text-white/55">Status</dt>
+            <dd class="flex items-center gap-2 text-3xl font-black text-white">
+              <span class="h-2.5 w-2.5 rounded-full bg-peach" aria-hidden="true"
+              ></span>
+              Active
+            </dd>
+          </div>
+        </dl>
+
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a
+            href="/meds-uet/meds-s1"
+            class="inline-flex items-center gap-2 rounded-full bg-[#f3e9e8] px-6 py-3 text-sm font-bold text-brand-dark transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            Explore MEDS-S1
+          </a>
+          <a
+            href="https://github.com/meds-uet/MEDS-S1"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center rounded-full border border-white/25 px-6 py-3 text-sm font-bold text-white transition hover:border-white/40 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Floorplan -->
+      <figure class="rounded-2xl border border-white/10 bg-black/15 p-4 sm:p-5">
+        <div class="grid grid-cols-6 gap-2.5 text-sm font-medium text-white/90">
+          <div
+            class="rounded-lg border border-white/12 bg-white/5 px-4 py-[1.1rem] text-center col-span-3"
+          >
+            Frontend
+          </div>
+          <div
+            class="rounded-lg border border-white/12 bg-white/5 px-4 py-[1.1rem] text-center col-span-3"
+          >
+            Backend
+          </div>
+
+          <div
+            class="col-span-6 rounded-lg border border-peach/40 bg-peach/10 px-4 py-6 text-center text-peach"
+          >
+            SoC fabric
+          </div>
+
+          <div
+            class="rounded-lg border border-white/12 bg-white/5 px-4 py-[1.1rem] text-center col-span-2"
+          >
+            Debug
+          </div>
+          <div
+            class="rounded-lg border border-white/12 bg-white/5 px-4 py-[1.1rem] text-center col-span-2"
+          >
+            Boot
+          </div>
+          <div
+            class="rounded-lg border border-white/12 bg-white/5 px-4 py-[1.1rem] text-center col-span-2"
+          >
+            Verification
+          </div>
+
+          <div
+            class="col-span-6 rounded-lg border border-dashed border-white/20 bg-white/5 px-4 py-[1.1rem] text-center"
+          >
+            CI
+          </div>
+        </div>
+        <figcaption class="mt-4 text-sm text-white/50">
+          MEDS-S1 focus areas
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>

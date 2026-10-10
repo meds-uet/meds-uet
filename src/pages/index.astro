@@ -1,23 +1,55 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import HighlightsCarousel from '../components/HighlightsCarousel.astro';
-import StatsBanner from '../components/StatsBanner.astro';
-import ResearchDomains from '../components/ResearchDomains.astro';
-import ParallaxFeature from '../components/ParallaxFeature.astro';
-import ResourcesGrid from '../components/ResourcesGrid.astro';
-import CTABanner from '../components/CTABanner.astro';
-import { getHomeSummaries } from '../lib/content';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import FlagshipProgram from "../components/FlagshipProgram.astro";
+import HighlightsCarousel from "../components/HighlightsCarousel.astro";
+import StatsBanner from "../components/StatsBanner.astro";
+import ResearchDomains from "../components/ResearchDomains.astro";
+import CTABanner from "../components/CTABanner.astro";
+import { getHomeSummaries } from "../lib/content";
 
-const { latestPosts, featuredProjects, latestActivities } = await getHomeSummaries();
+const { latestPosts } = await getHomeSummaries();
 ---
 
-<BaseLayout title="MEDS — Maktab-e-Digital Systems" description="University center for chip design, hardware tape-outs, and FPGA accelerators at UET, Lahore.">
-  <HeroSection />
+<BaseLayout
+  title="MEDS — Maktab-e-Digital Systems"
+  description="University center for chip design, hardware tape-outs, and FPGA accelerators at UET, Lahore."
+>
+  <!--
+    One continuous backdrop behind hero + flagship. No light band, no color switch.
+    The bottom color (#3b1a3a) should match the background of <ResearchDomains />.
+    If you see a faint seam there, change the `to-[#3b1a3a]` value below.
+  -->
+  <div
+    class="relative isolate overflow-hidden bg-gradient-to-b from-[#240a25] via-[#2f112f] to-[#3b1a3a]"
+  >
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(236,188,232,0.16),transparent_30%),radial-gradient(circle_at_82%_22%,rgba(255,224,220,0.10),transparent_30%)]"
+      >
+      </div>
+      <div
+        class="absolute inset-x-0 top-0 h-[900px] opacity-[0.05] [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+        style="background-image: linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px); background-size: 60px 60px;"
+      >
+      </div>
+      <div
+        class="pulse-glow absolute right-[8%] top-[10%] h-[520px] w-[520px] rounded-full bg-peach/10 blur-[160px]"
+      >
+      </div>
+      <div
+        class="pulse-glow absolute left-[4%] top-[55%] h-[420px] w-[420px] rounded-full bg-mauve/10 blur-[130px]"
+        style="animation-delay: 1.5s;"
+      >
+      </div>
+    </div>
+
+    <HeroSection />
+    <FlagshipProgram />
+  </div>
+
   <ResearchDomains />
   <StatsBanner />
   <HighlightsCarousel posts={latestPosts} />
-  <!-- <ParallaxFeature /> -->
-  <!-- <ResourcesGrid posts={latestPosts} /> -->
   <CTABanner />
 </BaseLayout>
